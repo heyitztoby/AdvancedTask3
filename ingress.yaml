@@ -30,13 +30,13 @@ plugin: rate-limiting
 apiVersion: v1
 kind: Service
 metadata:
-  name: cart
+  name: taskitem
   annotations:
    konghq.com/plugins: twelve-per-min
 spec:
   type: NodePort
   selector:
-    app: cart
+    app: taskitem
   ports:
   - port: 80
     targetPort: 80
@@ -46,13 +46,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: order
+  name: taskprocessitem
   annotations:
    konghq.com/plugins: twelve-per-min
 spec:
   type: NodePort
   selector:
-    app: order
+    app: taskprocessitem
   ports:
   - port: 80
     targetPort: 80
